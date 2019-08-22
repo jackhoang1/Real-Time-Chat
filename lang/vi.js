@@ -21,7 +21,9 @@ export const transErrors = {
      avatar_type: "Kiểu file ko hợp lệ, chỉ chấp nhận jpg, jpeg hoặc png",
      avatar_size: "Kích thước ảnh upload không lớn quá 1MB",
      user_current_password_failed: "Mật khẩu hiện tại không chính xác",
-     conversation_not_found: "Cuộc trò chuyện không tồn tại."
+     conversation_not_found: "Cuộc trò chuyện không tồn tại.",
+     image_message_type: "Kiểu file ko hợp lệ, chỉ chấp nhận jpg, jpeg hoặc png",
+     image_message_size: "Kích thước ảnh upload không lớn quá 1MB",
 };
 export const transSuccess = {
     userCreated: (userEmail) =>{

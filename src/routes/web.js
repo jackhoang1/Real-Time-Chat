@@ -34,7 +34,7 @@ let initRoutes = (app) => {
         failureRedirect: "/login-register",
     }));
 
-    router.get("/auth/google", auth.checkLoggedOut, passport.authenticate("google", {scope:["email"]}));
+    router.get("/auth/google", auth.checkLoggedOut, passport.authenticate("google", {scope:["email", "profile"]}));
     router.get("/auth/google/callback", auth.checkLoggedOut, passport.authenticate("google", {
         successRedirect: "/",
         failureRedirect: "/login-register",
@@ -61,7 +61,7 @@ let initRoutes = (app) => {
     router.put("/notification/mark-all-as-read", auth.checkLoggedIn, notification.markAllAsRead);
     
     router.post("/message/add-new-text-emoji", auth.checkLoggedIn, messageValid.checkMessageLength, message.addNewTextEmoji);
-
+    router.post("/massage/add-new-image", auth.checkLoggedIn, message.addNewImage)
 
     return app.use("/", router);
 };
