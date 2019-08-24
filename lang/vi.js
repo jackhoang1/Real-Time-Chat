@@ -24,6 +24,7 @@ export const transErrors = {
      conversation_not_found: "Cuộc trò chuyện không tồn tại.",
      image_message_type: "Kiểu file ko hợp lệ, chỉ chấp nhận jpg, jpeg hoặc png",
      image_message_size: "Kích thước ảnh upload không lớn quá 1MB",
+     attachment_message_size: "Kích thước file upload không lớn quá 1MB",
 };
 export const transSuccess = {
     userCreated: (userEmail) =>{
