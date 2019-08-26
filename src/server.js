@@ -11,12 +11,17 @@ import socketio from "socket.io";
 import initSockets from "./sockets/index";
 import cookieParser from "cookie-parser";
 import configSocketIo from "./config/socketio";
+import events from "events";
+import * as configApp from "./config/app";
 
 //run evn
 require('dotenv').config();
 
 //init app
 let app = express();
+
+//Set max connection event listener
+events.EventEmitter.defaultMaxListeners = configApp.app.max_event_listeners;
 
 //Init server with socket.io & express app
 let server = http.createServer(app);

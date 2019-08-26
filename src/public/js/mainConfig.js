@@ -194,6 +194,9 @@ function changeScreenChat() {
 
     //Lắng nghe dom cho việc gửi file chat
     attachmentChat(divId);
+
+    // Lắng nghe dom cho việc video call
+    videoChat(divId);
   });
 }
 
@@ -248,4 +251,7 @@ $(document).ready(function() {
   //convert unicode emoji to image emoji
   convertEmoji();
 
+  $("#video-chat-group").bind("click", function() {
+    alertify.notify("Tính năng này ko khả dụng với cuộc hội thoại nhóm. Vui lòng thử lại trên trò truyện cá nhân", "error", 7);
+  })
 });
