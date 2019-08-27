@@ -75,6 +75,7 @@ function updateUserInfo() {
     $("#input-change-username").bind("change", function(){
         let username = $(this).val()
         let regexUserName = new RegExp(/^[\s0-9a-zA-Z_ÀÁÂÃÈÉÊÌÍÒÓÔÕÙÚĂĐĨŨƠàáâãèéêìíòóôõùúăđĩũơƯĂẠẢẤẦẨẪẬẮẰẲẴẶẸẺẼỀỀỂưăạảấầẩẫậắằẳẵặẹẻẽềềểỄỆỈỊỌỎỐỒỔỖỘỚỜỞỠỢỤỦỨỪễệỉịọỏốồổỗộớờởỡợụủứừỬỮỰỲỴÝỶỸửữựỳỵỷỹ ]+$/);
+        
         if (!regexUserName.test(username) || username.length <3 || username.length >17) {
             alertify.notify("Username giới hạn trong khoảng 3-17 ký tự và không được phép chứa ký tự đặc biệt.", "error", 7);
             $(this).val(originUserInfo.username);

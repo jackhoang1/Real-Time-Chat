@@ -32,7 +32,7 @@ $(document).ready(function() {
         }
 
         $(`.chat[data-chat=${response.currentGroupId}]`).append(messageTyping);
-        nineScrollRight(currentGroupId);
+        nineScrollRight(response.currentGroupId);
       }
     } else {
       let checkTyping = $(`.chat[data-chat=${response.currentUserId}]`).find("div.bubble-typing-gif");
@@ -50,7 +50,7 @@ $(document).ready(function() {
     if (response.currentGroupId) {
       if (response.currentUserId !== $("#dropdown-navbar-user").data("uid")) {
         $(`.chat[data-chat=${response.currentGroupId}]`).find("div.bubble-typing-gif").remove();
-        nineScrollRight(currentGroupId);
+        nineScrollRight(response.currentGroupId);
       }
     } else {
       $(`.chat[data-chat=${response.currentUserId}]`).find("div.bubble-typing-gif").remove();
