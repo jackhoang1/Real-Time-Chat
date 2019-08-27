@@ -13,6 +13,14 @@ let typingOff = (io) => {
       clients = pushSocketIdtoArray(clients, group._id, socket.id)
     });
     
+    //When has new group chat
+    socket.on("new-group-created", (data) => {
+      clients = pushSocketIdtoArray(clients, data.groupChat._id, socket.id);
+    });
+
+    socket.on("member-recived-group-chat", (data) => {
+      clients = pushSocketIdtoArray(clients, data.groupChatid, socket.id);
+    });
 
     socket.on("user-is-not-typing", (data) => {
       if(data.groupId) {

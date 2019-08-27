@@ -13,6 +13,14 @@ let chatTextEmoji = (io) => {
       clients = pushSocketIdtoArray(clients, group._id, socket.id)
     });
     
+    //When has new group chat
+    socket.on("new-group-created", (data) => {
+      clients = pushSocketIdtoArray(clients, data.groupChat._id, socket.id);
+    });
+
+    socket.on("member-recived-group-chat", (data) => {
+      clients = pushSocketIdtoArray(clients, data.groupChatid, socket.id);
+    });
 
     socket.on("chat-text-emoji", (data) => {
       if(data.groupId) {
@@ -35,6 +43,7 @@ let chatTextEmoji = (io) => {
         };
       }
     });
+
     socket.on("disconnect", () => {
       clients = removeSocketIdFromArray(clients, socket.request.user._id, socket);
       socket.request.user.chatGroupIds.forEach(group => {
