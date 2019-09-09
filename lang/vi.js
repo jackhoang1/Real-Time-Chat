@@ -1,6 +1,6 @@
 export const transValidation = {
     email_incorrect: "Email phải có dạng example@gmail.com",
-    gender_incorrect: "Đừng cố tình thay đổi giới tình của mình làm gì.",
+    gender_incorrect: "Đừng cố tình thay đổi giới tính của mình làm gì.",
     password_incorrect: "Mật khẩu phải chứa ít nhất 8 ký tự, bao gồm chữ in hoa, chữ thường, chữ số và ký tự.",
     password_confirmation_incorrect: "Mật khẩu nhập lại chưa trùng khớp.",
     update_username: "Username giới hạn trong khoảng 3-17 ký tự và không được phép chứa ký tự đặc biệt.",
